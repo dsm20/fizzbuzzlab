@@ -16,7 +16,7 @@ func fizzbuzz(n int) string {
 }
 
 func main() {
-	for i := 1; i <= 100; i++ {
+	for i := 1; i <= 50; i++ {
 		fmt.Printf("%3d: %s\n", i, fizzbuzz(i))
 	}
 }

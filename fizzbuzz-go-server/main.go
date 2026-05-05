@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"strconv"
 )
@@ -25,11 +26,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "provide ?n=<positive integer>", http.StatusBadRequest)
 		return
 	}
-	fmt.Fprintln(w, fizzbuzz(n))
+	if _, err := fmt.Fprintln(w, fizzbuzz(n)); err != nil {
+		log.Printf("write error: %v", err)
+	}
 }
 
 func main() {
 	http.HandleFunc("/", handler)
 	fmt.Println("fizzbuzz server listening on :8080")
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }

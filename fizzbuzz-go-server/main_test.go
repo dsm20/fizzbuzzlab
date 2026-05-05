@@ -9,9 +9,9 @@ import (
 
 func TestHandler(t *testing.T) {
 	tests := []struct {
-		query      string
-		wantCode   int
-		wantBody   string
+		query    string
+		wantCode int
+		wantBody string
 	}{
 		{"?n=1", http.StatusOK, "1"},
 		{"?n=3", http.StatusOK, "Fizz"},

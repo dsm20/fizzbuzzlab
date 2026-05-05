@@ -4,6 +4,9 @@
   "scripts": {
     "test": "jest"
   },
+  "dependencies": {
+    "gpl-2.0-licensed": "^1.0.0"
+  },
   "devDependencies": {
     "jest": "^29.0.0"
   }

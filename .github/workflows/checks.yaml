@@ -77,5 +77,6 @@ jobs:
           go mod tidy
           go fmt ./...
           [ -f go.sum ] && git restore go.sum || true
+
       - name: Verify no uncommitted changes
         run: git diff-files --quiet --ignore-submodules
